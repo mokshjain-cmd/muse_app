@@ -1,0 +1,36 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+import os
+
+cwd = GetCurrentDir()
+src = ["main.c", "ble_link.c", "ui.c", "audio.c"]
+
+CPPPATH = [cwd, os.path.join(cwd, "avatar"), str(Dir('#'))]
+CPPDEFINES = []
+
+# Muse pixel avatar (muse_pixel.c from the ESP32 SDK's avatar recipe):
+#  1. firmware/avatar/muse_pixel.c  - your own avatar, redrawn by your Muse
+#  2. the local muse-gadget-sdk checkout's default avatar (Meta's character;
+#     compiled from there, never copied into this project). MUSE_AVATAR=0 disables it.
+#  3. neither: ui.c draws its built-in face.
+own = os.path.abspath(os.path.join(cwd, "..", "avatar", "muse_pixel.c"))
+sdk = os.path.abspath(os.path.join(cwd, "..", "..", "..", "muse-gadget-sdk", "esp32", "avatar", "muse_pixel.c"))
+avatar = own if os.path.exists(own) else (sdk if os.path.exists(sdk) and os.getenv("MUSE_AVATAR", "1") != "0" else None)
+if avatar:
+    print("Muse pixel avatar: " + avatar)
+    src += [File(avatar)]
+    CPPDEFINES += ['HAVE_MUSE_PIXEL']
+
+if GetDepend("SOC_SF32LB55X"):
+    src += ["lcpu_img.c"]
+
+simu = GetOption('simu')
+if simu:
+    print("Add flag for 52X LCPU simulation")
+    CPPDEFINES += ['SF32LB52X_58']
+    src += ["lcpu_img.c"]
+
+group = DefineGroup('App_utils', src, depend = [''], CPPPATH = CPPPATH, CPPDEFINES=CPPDEFINES)
+
+Return('group')

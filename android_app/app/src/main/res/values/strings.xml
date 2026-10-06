@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Phone Bridge</string>
+    <string name="service_text">Connected to your SiFli board and Muse</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="state_idle">Board not connected</string>
+    <string name="state_scanning">Scanning for board…</string>
+    <string name="state_connecting">Connecting…</string>
+    <string name="state_connected">Board: %1$s</string>
+
+    <string name="muse_no_board">Muse: connect the board first</string>
+    <string name="muse_not_paired">Muse: not paired</string>
+    <string name="muse_pairing">Muse: pairing… choose %1$s in the Muse app</string>
+    <string name="muse_connecting">Muse: connecting…</string>
+    <string name="muse_connected">Muse: connected</string>
+    <string name="muse_offline">Muse: phone is offline</string>
+    <string name="ask_muse_hint">Ask Muse</string>
+    <string name="ask">Ask</string>
+    <string name="pair">Pair with Muse</string>
+    <string name="cancel_pairing">Cancel pairing</string>
+    <string name="unpair">Unpair</string>
+    <string name="unpair_confirm">Remove the Muse pairing from this phone? You will need to pair again.</string>
+    <string name="no_sdk_token">Add your SDK token in Settings first (gadgets.muse.ai, Account, SDK tokens).</string>
+
+    <string name="google_off">Gmail and Calendar: not connected</string>
+    <string name="google_on">Gmail and Calendar: connected</string>
+    <string name="google_sign_in">Sign in with Google</string>
+    <string name="google_disconnect">Disconnect</string>
+    <string name="google_failed">Google sign-in failed: %1$s</string>
+    <string name="send_to_board">Send to board screen</string>
+    <string name="message_hint">Hello board</string>
+    <string name="send">Send</string>
+    <string name="sync_time">Sync time</string>
+    <string name="weather">Weather</string>
+
+    <string name="settings">Settings</string>
+    <string name="sdk_token">Muse SDK token (mgst_…)</string>
+    <string name="sdk_token_help">From gadgets.muse.ai, Account, SDK tokens</string>
+    <string name="integrations">Integrations (each one appears to Muse once filled in)</string>
+    <string name="asana_token">Asana personal access token</string>
+    <string name="ha_url">Home Assistant URL (http://homeassistant.local:8123)</string>
+    <string name="ha_token">Home Assistant long-lived access token</string>
+    <string name="mqtt_url">MQTT broker (tcp://192.168.1.10:1883)</string>
+    <string name="mqtt_user">MQTT user (optional)</string>
+    <string name="mqtt_password">MQTT password (optional)</string>
+    <string name="device_token">Muse device token (advanced, if you already have one)</string>
+    <string name="speak_on">Speak Muse\'s replies on</string>
+    <string name="speak_board">Board speaker</string>
+    <string name="speak_phone">Phone</string>
+    <string name="speak_off">Off</string>
+    <string name="city">Weather city</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="log">Log</string>
+    <string name="bt_needed">Bluetooth permission is needed to find the board</string>
+</resources>
